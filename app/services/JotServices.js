@@ -1,16 +1,37 @@
-
+import { AppState } from "../AppState.js";
+import { Jot } from "../models/Jot.js";
 
 class JotServices {
-  setJotBody(newJot) {
-    throw new Error("Method not implemented.");
-  }
+
   setNewJotTitle(newJotTitle) {
-    const newJot.title = newJotTitle
+    // console.log(newJotTitle, 'passed to service');
+    const newJot = new Jot(newJotTitle)
+
+    newJot.timeCreated = Date()
+    AppState.jots.push(newJot)
+    console.log('👋', AppState.jots);
+    this.setActiveJot(newJot.id)
   }
-  createNewJot(title) {
-    console.log('services creating new jot');
-    console.log(title, 'passed along');
+
+
+  setActiveJot(jotId) {
+    // console.log('newjot sent to set active in service: ', jotId);
+    const foundJot = AppState.jots.find(jot => jot.id == jotId)
+    AppState.activeJot = foundJot
+    foundJot.timeEdited = Date()
+    console.log('🎯 ', AppState.activeJot);
+
+
+
   }
+  // setJotBody(newJot) {
+  //   throw new Error("Method not implemented.");
+  // }
+
+  // setJotBody(newJotBody) {
+
+  //   console.log(newJotBody, 'passed to service');
+  // }
 
 
 

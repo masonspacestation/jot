@@ -8,14 +8,10 @@ class ObservableAppState extends EventEmitter {
   jots = [
 
     new Jot({
-      id: generateId(),
-      title: '',
-      timeCreated: Date(),
-      timeEdited: Date(),
-      jotColor: '',
-      body: '',
-      subject: '',
-      wordCount: 0,
+      title: 'Sample Jot',
+      // timeCreated: Date(),
+      // timeEdited: Date(),
+      jotColor: '#007744',
     }),
 
 
@@ -26,6 +22,10 @@ class ObservableAppState extends EventEmitter {
   ]
 
 
+  /** 
+   * @type {Jot}
+  */
+  activeJot = null
 
 
 

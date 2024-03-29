@@ -6,17 +6,18 @@
   </div>
 
   <div class="row bg-primary p-5">
-    <button class="btn btn-info w-25" onclick="app.JotsController.createNewJot('this is like a note')">Create
+    <button class="btn btn-info w-25" onclick="app.JotsController.drawTitleForm()">Create
       New</button>
   </div>
 
-  <div class="col-8 mt-3 p-3">
-    <form onsubmit="app.JotsController.setNewJotTitle('jot title from form')">
-      <label for="jotTitle">Title of New Jot</label>
-      <input type="text" name="jotTitle" id="jotTitle" class="form-control">
-    </form>
-  </div>
+  <!-- button to open title editor -->
 
+  <section id="new-jot-title-form" class="row">
+  </section>
+
+
+  <section id="active-jot-editor" class="row">
+  </section>
 
 
 </div>
