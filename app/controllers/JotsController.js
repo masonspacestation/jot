@@ -44,17 +44,23 @@ export class JotsController {
     }
   }
 
-  drawActiveJot() {
+  drawActiveJot(jotId) {
     const activeJot = AppState.activeJot
-
+    AppState.emit('jots')
     setHTML('active-jot-editor', AppState.activeJot.activeJotTemplate)
   }
 
 
   setJotBody(jotId) {
-    event.preventDefault()
-    let jotBody = AppState.jots.find(jot => jot.id == jotId)
-    jotServices.setJotBody(jotBody)
+    try {
+      event.preventDefault()
+      let jotBody = AppState.jots.find(jot => jot.id == jotId)
+      jotServices.setJotBody(jotBody)
+      console.log(jotBody);
+    }
+    catch {
+      console.log('try again');
+    }
   }
 
   // setActiveJot(newJot) {

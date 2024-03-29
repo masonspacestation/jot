@@ -1,5 +1,5 @@
 <section class="container-fluid">
-  <section class="row justify-content-around bg-white">
+  <div class="row justify-content-start bg-white">
     <div class="col-3 bg-light text-start">
       <ul class="ms-0">
         <li><button class="btn w-50">Jot Title 1</button></li>
@@ -11,9 +11,9 @@
         <li><button class="btn w-50">Jot Title 4</button></li>
         <hr>
       </ul>
-      <form>
-        <label for="jotTitle">Add New Jot</label>
-        <input type="text" name="jotTitle" id="jotTitle">
+      <form onsubmit="app.JotsController.createNewJotTitle()">
+        <label for="title">New Jot</label>
+        <input type="text" name="title" id="title" minlength="3" maxlength="15" class="form-floating" required>
         <label for="colors">Set a Color</label>
         <input type="color" list="presetColors">
         <datalist id="presetColors">
@@ -24,15 +24,29 @@
         <button type="submit">Add New</button>
       </form>
     </div>
-    <div class="col-6 bg-dark">
-      <form>
-        <label for="jotBody" class="text-white">Edit Note</label>
-        <textarea name="jotBody" id="jotBody" rows="10" class="w-75 rounded-2"></textarea>
-      </form>
-    </div>
-  </section>
 
-  <div class="h1 my-5">layout</div>
+
+
+    <div class="col d-flex justify-content-center align-items-center bg-dark">
+      <div id="body-editor" class="card w-75 m-5 p-3 text-start">
+        <section class="row" id="active-jot-editor">
+          <!-- <h3>Jot Title</h3>
+
+          <h1>Practice Editor</h1>
+          <form id="test-jot-editor" onsubmit="app.JotsController.setJotBody()">
+
+            <input type="text-area" name="" id="">
+            <textarea name="jotBody" id="jotBody" rows="10" class="w-75 rounded-2"></textarea>
+            <button type="submit">Submit</button>
+          </form> -->
+
+        </section>
+      </div>
+
+    </div>
+
+  </div>
+
 
 
 </section>
@@ -56,7 +70,7 @@
 
   <!-- button to open title editor -->
 
-  <section id="new-jot-title-form" class="row">
+  <!-- <section id="new-jot-title-form" class="row">
     <div class="col-8 mt-3 p-3">
       <form onsubmit="app.JotsController.createNewJotTitle()">
         <label for="title">Title of New Jot</label>
@@ -64,13 +78,13 @@
         <button class="btn" type="submit">Submit</button>
       </form>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- <section id="active-jot-editor" class="row">
   </section> -->
 
-  <section class="row" id="test-jot-editor">
+  <!-- <section class="row" id="test-jot-editor">
 
     <div class="col-6 card">
       <h1>Practice Editor</h1>
@@ -81,6 +95,6 @@
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus assumenda veniam blanditiis?</p>
 </div>
-</section>
+</section> -->
 
 </div>

@@ -19,15 +19,25 @@ export class Jot {
 
   get activeJotTemplate() {
     return `
-    <div class="col-6 card">
-      <h1>${this.title}</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus assumenda veniam blanditiis?</p>
+    <div class="card">
+      <h3>${this.title}</h3>
+      <form onsubmit="app.JotsController.setJotBody('${this.id}')" >
+      <textarea name="body" id="test-jot-editor">${this.body}</textarea>
+      <button class="btn" type="submit">Submit</button>
+      </form>
     </div>
     `
   }
 
-  //   get newJotTitleForm() {
-  //     return `
+  get newJotTitleForm() {
+    return `
+    <h3>${this.title}</h3>
+
+  `
+  }
+
+
+
   //   <div class="col-8 mt-3 p-3">
   //   <form onsubmit="app.JotsController.drawTitleForm()">
   //     <label for="title">Title of New Jot</label>
@@ -35,11 +45,6 @@ export class Jot {
   //     <button class="btn" type="submit">Submit</button>
   //   </form>
   // </div>
-  // `
-  //   }
-
-
-
 
 
 
