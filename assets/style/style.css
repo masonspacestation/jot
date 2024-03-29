@@ -1,1 +1,8 @@
 /* BASIC STYLES HERE */
+label {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}

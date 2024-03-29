@@ -1,3 +1,47 @@
+<section class="container-fluid">
+  <section class="row justify-content-around bg-white">
+    <div class="col-3 bg-light text-start">
+      <ul class="ms-0">
+        <li><button class="btn w-50">Jot Title 1</button></li>
+        <hr>
+        <li><button class="btn w-50">Jot Title 2</button></li>
+        <hr>
+        <li><button class="btn w-50">Jot Title 3</button></li>
+        <hr>
+        <li><button class="btn w-50">Jot Title 4</button></li>
+        <hr>
+      </ul>
+      <form>
+        <label for="jotTitle">Add New Jot</label>
+        <input type="text" name="jotTitle" id="jotTitle">
+        <label for="colors">Set a Color</label>
+        <input type="color" list="presetColors">
+        <datalist id="presetColors">
+          <option>#ff0000</option>
+          <option>#00ff00</option>
+          <option>#0000ff</option>
+        </datalist>
+        <button type="submit">Add New</button>
+      </form>
+    </div>
+    <div class="col-6 bg-dark">
+      <form>
+        <label for="jotBody" class="text-white">Edit Note</label>
+        <textarea name="jotBody" id="jotBody" rows="10" class="w-75 rounded-2"></textarea>
+      </form>
+    </div>
+  </section>
+
+  <div class="h1 my-5">layout</div>
+
+
+</section>
+
+
+
+
+
+
 <div class="container-fluid">
   <div class="row bg-dark py-3">
     <p class="fs-3 align-items-center">
@@ -13,11 +57,30 @@
   <!-- button to open title editor -->
 
   <section id="new-jot-title-form" class="row">
+    <div class="col-8 mt-3 p-3">
+      <form onsubmit="app.JotsController.createNewJotTitle()">
+        <label for="title">Title of New Jot</label>
+        <input type="text" name="title" id="title" class="form-control">
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
   </section>
 
 
-  <section id="active-jot-editor" class="row">
-  </section>
+  <!-- <section id="active-jot-editor" class="row">
+  </section> -->
 
+  <section class="row" id="test-jot-editor">
+
+    <div class="col-6 card">
+      <h1>Practice Editor</h1>
+      <form id="test-jot-editor" onsubmit="app.JotsController.setJotBody()">
+        <input type="text-area" name="jotBody" id="jotBody" class="w-75"></input>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus assumenda veniam blanditiis?</p>
+</div>
+</section>
 
 </div>

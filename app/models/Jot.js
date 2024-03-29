@@ -26,17 +26,17 @@ export class Jot {
     `
   }
 
-  get newJotTitleForm() {
-    return `
-  <div class="col-8 mt-3 p-3">
-  <form onsubmit="app.JotsController.drawTitleForm()">
-    <label for="title">Title of New Jot</label>
-    <input type="text" name="title" id="title" class="form-control">
-    <button class="btn" type="submit">Submit</button>
-  </form>
-</div>
-`
-  }
+  //   get newJotTitleForm() {
+  //     return `
+  //   <div class="col-8 mt-3 p-3">
+  //   <form onsubmit="app.JotsController.drawTitleForm()">
+  //     <label for="title">Title of New Jot</label>
+  //     <input type="text" name="title" id="title" class="form-control">
+  //     <button class="btn" type="submit">Submit</button>
+  //   </form>
+  // </div>
+  // `
+  //   }
 
 
 

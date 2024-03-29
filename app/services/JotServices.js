@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Jot } from "../models/Jot.js";
+import { loadState, saveState } from "../utils/Store.js";
 
 class JotServices {
 
@@ -24,17 +25,22 @@ class JotServices {
 
 
   }
-  // setJotBody(newJot) {
-  //   throw new Error("Method not implemented.");
-  // }
-
-  // setJotBody(newJotBody) {
-
-  //   console.log(newJotBody, 'passed to service');
-  // }
 
 
+  setJotBody(newJotBody) {
 
+    console.log('👉 jot body passed to service ', newJotBody);
+  }
+
+
+  saveJot() {
+    saveState('jots', AppState.jots)
+  }
+
+  loadJots() {
+    const jotsFromLocalStorage = loadState('jots', [Jot])
+    AppState.jots = jotsFromLocalStorage
+  }
 
 
 

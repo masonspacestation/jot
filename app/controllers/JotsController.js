@@ -24,11 +24,11 @@ export class JotsController {
     // const jotBody = getFormData(form)
   }
 
-  drawTitleForm() {
-    event.preventDefault()
-    console.log('creating jot');
-    setHTML('new-jot-title-form', AppState.activeJot.newJotTitleForm)
-  }
+  // drawTitleForm() {
+  //   event.preventDefault()
+  //   console.log('creating jot');
+  //   setHTML('new-jot-title-form', AppState.activeJot.newJotTitleForm)
+  // }
 
 
   createNewJotTitle() {
@@ -50,6 +50,13 @@ export class JotsController {
     setHTML('active-jot-editor', AppState.activeJot.activeJotTemplate)
   }
 
+
+  setJotBody(jotId) {
+    event.preventDefault()
+    let jotBody = AppState.jots.find(jot => jot.id == jotId)
+    jotServices.setJotBody(jotBody)
+  }
+
   // setActiveJot(newJot) {
   //   console.log('setactive controller: ', newJot);
   //   jotServices.setActiveJot(newJot)
@@ -67,8 +74,5 @@ export class JotsController {
   //   jotServices.setNewJotTitle(newJot)
   // }
 
-  // setJotBody(newJotId) {
-  //   let newJot = AppState.jots.find(jot => jot.id == newJotId)
-  //   // jotServices.setJotBody(newJot)
-  // }
+
 }
