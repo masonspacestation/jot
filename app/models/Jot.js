@@ -19,25 +19,37 @@ export class Jot {
   }
 
 
-  get activeJotTemplate() {
+  get activeJotEditorTemplate() {
     return `
-    <div class="card">
-      <h3>${this.title}</h3>
-     
-      <div>
-      <label for="jotBody">Jot Body</label>
-      <textarea onblur="app.JotsController.setJotBody()" name="body" id="jotBody">${this.body}</textarea>
-      </div>
-      
-      </div>
+    <div id="editor-bg" class="d-flex text-center justify-content-center bg-dark">
+    <div class="col-8 card bg-light shadow rounded rounded-2 p-5">
+
+    <div id="body-editor" class="card w-75 m-5 p-3 text-start">
+      <section class="row">
+        <div class="card">
+          <h3>${this.title}</h3>
+  
+          <div>
+            <label for="jotBody">Jot Body</label>
+            <textarea onblur="app.JotsController.setJotBody()" name="body" id="jotBody">${this.body}</textarea>
+          </div>
+  
+        </div>
+      </section>
+    </div>
+
+    </div>
+  </div>
+
+
+
+
+
       `
   }
 
 
-  //  <form onsubmit="app.JotsController.setJotBody()" >
-  //   <textarea name="body" id="jotBody">${this.body}</textarea>
-  //   <button class="btn" type="submit">Submit</button>
-  // </form>
+
 
 
   get newJotTitleForm() {

@@ -41,7 +41,12 @@ export class JotsController {
   drawActiveJot() {
     // const activeJot = AppState.activeJot
     AppState.emit('jots')
-    setHTML('active-jot-editor', AppState.activeJot.activeJotTemplate)
+
+
+
+    // const editorBgToAdd = document.getElementById('active-jot-editor')
+    // editorBgToAdd.add()
+    setHTML('active-jot-editor', AppState.activeJot.activeJotEditorTemplate)
   }
 
 
@@ -79,10 +84,16 @@ export class JotsController {
   }
 
   drawAllJots() {
+    // REVIEW __________
+    // const editorBgToRemove = document.getElementById('active-jot-editor')
+    // editorBgToRemove.remove()
+
+
     const allJots = AppState.jots
     let jotsContent = ''
     allJots.forEach(jot => jotsContent += jot.jotListTemplate)
     setHTML('jot-list', jotsContent)
+
   }
 
 

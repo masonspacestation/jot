@@ -1,6 +1,6 @@
-<section class="container-fluid">
-  <div class="row justify-content-start bg-white">
-    <!-- <div class="col-3 bg-light text-start">
+<!-- <section class="container-fluid">
+  <div class="row justify-content-start bg-white"> -->
+<!-- <div class="col-3 bg-light text-start">
       <ul class="ms-0">
         <li id="jot-list"><button class="btn w-50">Jot Title 1</button></li>
       </ul>
@@ -19,11 +19,30 @@
     </div> -->
 
 
+<!-- STUB going away for now -->
+<!-- <section class="container-fluid bg-dark p-5 justify-content-center align-content-center">
 
-    <div class="col d-flex justify-content-center align-items-center bg-dark">
-      <div id="body-editor" class="card w-75 m-5 p-3 text-start">
-        <section class="row" id="active-jot-editor">
-          <!-- <h3>Jot Title</h3>
+      <form onsubmit="app.JotsController.createNewJot()">
+        <label for="title">New Jot</label>
+        <input type="text" name="title" id="title" minlength="3" maxlength="15"
+          class=" bg-transparent py-3 px-5 fs-6 rounded" placeholder="Jot Something Down" required>
+        <label for="color">Set a Color</label>
+        <input type="color" list="presetColors">
+        <datalist id="presetColors">
+          <option value="#ff0000">#ff0000</option>
+          <option value="#00ff00">#00ff00</option>
+          <option value="#0000ff">#0000ff</option>
+        </datalist>
+        <button type="submit">Add New</button>
+      </form>
+    </section> -->
+
+
+
+<!-- <div id="active-jot-editor" class="col d-flex justify-content-center align-items-center bg-dark"> -->
+<!-- <div id="body-editor" class="card w-75 m-5 p-3 text-start">
+        <section class="row"> -->
+<!-- <h3>Jot Title</h3>
 
           <h1>Practice Editor</h1>
           <form id="test-jot-editor" onsubmit="app.JotsController.setJotBody()">
@@ -33,60 +52,33 @@
             <button type="submit">Submit</button>
           </form> -->
 
-        </section>
-      </div>
+<!-- </section>
+      </div> -->
 
-    </div>
+<!-- </div> -->
 
-  </div>
+<!-- </div> -->
 
 
 
-</section>
 
-<section class="container-fluid bg-dark">
-  <section class="row justify-content-center">
+
+<!-- </section> -->
+
+<div id="active-jot-editor">
+
+</div>
+
+<section id="home-content" class="container-fluid bg-dark">
+  <section class="row justify-content-center align-items-end h-50">
     <div class="col-8">
-      <div id="jot-list" class="row justify-content-center p-5 gap-4">
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one two</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two three four</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two three four</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two three four</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two three four</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two three four</button>
-        <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one
-          two three four</button>
+      <div id="jot-list" class="row over justify-content-center p-5 gap-4">
+        <!-- <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
+          one two</button> -->
       </div>
     </div>
   </section>
-  <section class="row justify-content-center">
+  <section class="row justify-content-center h-50 align-items-start">
     <button class="btn btn-outline-secondary w-25 p-3 m-2 text-secondary"><i class="mdi mdi-pencil-circle"></i>
       Write
       New Note</button>
