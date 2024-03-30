@@ -50,15 +50,18 @@ export class Jot {
 
   get jotListTemplate() {
     return `
-    <div onclick="app.JotsController.setActiveJot('${this.id}')" class="col-12 selectable" role="button">
-      <div class="d-flex gap-4 fs-2">
-        <span>${this.title} | ${this.timeEdited}</span>
-      
-      </div>
-    </div>
+    <button onclick="app.JotsController.setActiveJot('${this.id}')" class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> ${this.title}</button>
+
+    
     `
   }
 
+  /* <div onclick="app.JotsController.setActiveJot('${this.id}')" class="col-12 selectable" role="button">
+        <div class="d-flex gap-4 fs-2">
+          <span>${this.title} | ${this.timeEdited}</span>
+        
+        </div>
+      </div> */
 
 
   get CreatedDate() {
