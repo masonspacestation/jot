@@ -12,8 +12,10 @@ export class Jot {
     this.subject = data.subject
     this.wordCount = data.wordCount
     this.jotColor = data.jotColor
-    this.timeCreated = null
-    this.timeEdited = null
+    // this.timeCreated = null
+    // this.timeEdited = null
+    this.timeCreated = data.timeCreated == null ? new Date() : new Date(data.timeCreated)
+    this.timeEdited = data.timeEdited == null ? new Date() : new Date(data.timeEdited)
   }
 
 
@@ -49,14 +51,27 @@ export class Jot {
   get jotListTemplate() {
     return `
     <div onclick="app.JotsController.setActiveJot('${this.id}')" class="col-12 selectable" role="button">
-      <div class="d-flex gap-4 fs-3">
-        <p>${this.title}</p>
+      <div class="d-flex gap-4 fs-2">
+        <span>${this.title} | ${this.timeEdited}</span>
       
       </div>
     </div>
     `
   }
 
+
+
+  get CreatedDate() {
+    return this.timeCreated.toLocaleDateString() // 3/28/2024
+  }
+
+  get CreatedTime() {
+    return this.timeEdited.toLocaleTimeString() // 12:28:11 PM
+  }
+
+  get LastViewedDateAndTime() {
+    return this.timeEdited.toLocaleString() // 3/28/2024, 2:48:19 PM
+  }
   //   <div class="col-8 mt-3 p-3">
   //   <form onsubmit="app.JotsController.drawTitleForm()">
   //     <label for="title">Title of New Jot</label>

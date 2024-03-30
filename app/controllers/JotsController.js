@@ -12,14 +12,15 @@ export class JotsController {
 
     console.log('✒️ the jots controller is loaded');
     AppState.on('activeJot', this.drawActiveJot)
+    AppState.on('jots', this.drawAllJots)
 
     jotServices.loadJots()
+    this.drawAllJots()
   }
 
 
 
   createNewJot() {
-    // debugger
     try {
       event.preventDefault()
       const form = event.target
@@ -35,27 +36,10 @@ export class JotsController {
     }
   }
 
-  // createFieldReport() {
-  //   try {
-  //     event.preventDefault()
-  //     console.log('Creating field report');
-  //     const form = event.target
-  //     const fieldReportFormData = getFormData(form)
-  //     console.log('here is your data', fieldReportFormData);
-  //     // fieldReportsService.createFieldReport(fieldReportFormData)
-
-  //     // @ts-ignore
-  //     form.reset() // if there is a red squiggle here, it's okay
-  //   } catch (error) {
-  //     console.error('[CREATING FIELD REPORT]', error)
-  //     window.alert(error.message)
-  //   }
-  // }
 
 
-
-  drawActiveJot(jotId) {
-    const activeJot = AppState.activeJot
+  drawActiveJot() {
+    // const activeJot = AppState.activeJot
     AppState.emit('jots')
     setHTML('active-jot-editor', AppState.activeJot.activeJotTemplate)
   }
@@ -85,12 +69,21 @@ export class JotsController {
     // }
   }
 
-  // setActiveJot(newJot) {
-  //   console.log('setactive controller: ', newJot);
-  //   jotServices.setActiveJot(newJot)
-  // }
 
 
+  // click on jot name - pass id to click event -  service sets active jot equal to this new one - active jot will draw through listener
+
+  setActiveJot(jotID) {
+    console.log('setactive controller: ', jotID);
+    jotServices.setActiveJot(jotID)
+  }
+
+  drawAllJots() {
+    const allJots = AppState.jots
+    let jotsContent = ''
+    allJots.forEach(jot => jotsContent += jot.jotListTemplate)
+    setHTML('jot-list', jotsContent)
+  }
 
 
 

@@ -9,8 +9,6 @@ class ObservableAppState extends EventEmitter {
 
     new Jot({
       title: 'Sample Jot',
-      // timeCreated: Date(),
-      // timeEdited: Date(),
       jotColor: '#007744',
     }),
 

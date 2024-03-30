@@ -8,7 +8,7 @@ class JotServices {
     // console.log(newJotTitle, 'passed to service');
     const newJot = new Jot(newJotTitle)
 
-    newJot.timeCreated = Date()
+    // newJot.timeCreated = Date()
     AppState.jots.push(newJot)
     console.log('👋', AppState.jots);
     this.saveJot()
@@ -19,9 +19,9 @@ class JotServices {
 
   setActiveJot(jotId) {
     // console.log('newjot sent to set active in service: ', jotId);
-    const foundJot = AppState.jots.find(jot => jot.id == jotId)
-    AppState.activeJot = foundJot
-    foundJot.timeEdited = Date()
+    const activeJot = AppState.jots.find(jot => jot.id == jotId)
+    AppState.activeJot = activeJot
+    activeJot.timeEdited = Date()
     console.log('🎯 ', AppState.activeJot);
 
 
@@ -36,6 +36,7 @@ class JotServices {
 
     console.log(AppState.activeJot);
     this.saveJot()
+    AppState.emit('jots')
   }
 
 
