@@ -4,13 +4,15 @@ import { loadState, saveState } from "../utils/Store.js";
 
 class JotServices {
 
-  setNewJotTitle(newJotTitle) {
+  setNewJot(newJotTitle) {
     // console.log(newJotTitle, 'passed to service');
     const newJot = new Jot(newJotTitle)
 
     newJot.timeCreated = Date()
     AppState.jots.push(newJot)
     console.log('👋', AppState.jots);
+    this.saveJot()
+
     this.setActiveJot(newJot.id)
   }
 
@@ -24,12 +26,16 @@ class JotServices {
 
 
 
+    this.saveJot()
   }
 
 
   setJotBody(newJotBody) {
 
-    console.log('👉 jot body passed to service ', newJotBody);
+    AppState.activeJot.body = newJotBody
+
+    console.log(AppState.activeJot);
+    this.saveJot()
   }
 
 

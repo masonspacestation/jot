@@ -13,36 +13,46 @@ export class JotsController {
     console.log('✒️ the jots controller is loaded');
     AppState.on('activeJot', this.drawActiveJot)
 
-
+    jotServices.loadJots()
   }
 
 
 
   createNewJot() {
-
-    // const form = event.target
-    // const jotBody = getFormData(form)
-  }
-
-  // drawTitleForm() {
-  //   event.preventDefault()
-  //   console.log('creating jot');
-  //   setHTML('new-jot-title-form', AppState.activeJot.newJotTitleForm)
-  // }
-
-
-  createNewJotTitle() {
+    // debugger
     try {
       event.preventDefault()
       const form = event.target
-      const newJotTitle = getFormData(form)
+      const newJot = getFormData(form)
 
-      jotServices.setNewJotTitle(newJotTitle)
+      jotServices.setNewJot(newJot)
+      // @ts-ignore
+      form.reset()
     }
-    catch {
-      console.log('not this time');
+    catch (error) {
+      console.error('[CREATING NEW JOT] ', error);
+      window.alert(error.message)
     }
   }
+
+  // createFieldReport() {
+  //   try {
+  //     event.preventDefault()
+  //     console.log('Creating field report');
+  //     const form = event.target
+  //     const fieldReportFormData = getFormData(form)
+  //     console.log('here is your data', fieldReportFormData);
+  //     // fieldReportsService.createFieldReport(fieldReportFormData)
+
+  //     // @ts-ignore
+  //     form.reset() // if there is a red squiggle here, it's okay
+  //   } catch (error) {
+  //     console.error('[CREATING FIELD REPORT]', error)
+  //     window.alert(error.message)
+  //   }
+  // }
+
+
 
   drawActiveJot(jotId) {
     const activeJot = AppState.activeJot
@@ -51,16 +61,28 @@ export class JotsController {
   }
 
 
-  setJotBody(jotId) {
-    try {
-      event.preventDefault()
-      let jotBody = AppState.jots.find(jot => jot.id == jotId)
-      jotServices.setJotBody(jotBody)
-      console.log(jotBody);
-    }
-    catch {
-      console.log('try again');
-    }
+  setJotBody() {
+    event.preventDefault()
+    const form = event.target
+
+    // @ts-ignore
+    const newJotBody = form.value
+    jotServices.setJotBody(newJotBody)
+
+    // REVIEW why is this wrong?
+    // const newJotBody = event.target
+    // console.log(newJotBody);
+
+    // try {
+    //   event.preventDefault()
+    //   let foundJot = AppState.jots.find(jot => jot.id == jotId)
+    //   const newBody = foundJot.body
+    //   jotServices.setJotBody(newBody)
+    //   console.log('🔮 ', foundJot);
+    // }
+    // catch {
+    //   console.log('try again');
+    // }
   }
 
   // setActiveJot(newJot) {
@@ -73,12 +95,6 @@ export class JotsController {
 
 
 
-
-
-  // setNewJotTitle(newJotId) {
-  //   let newJot = AppState.jots.find(jot => jot.id == newJotId)
-  //   jotServices.setNewJotTitle(newJot)
-  // }
 
 
 }
