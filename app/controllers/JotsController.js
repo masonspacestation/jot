@@ -44,9 +44,9 @@ export class JotsController {
 
 
 
-    // const editorBgToAdd = document.getElementById('active-jot-editor')
+    // const editorBgToAdd = document.getElementById('editor-view')
     // editorBgToAdd.add()
-    setHTML('active-jot-editor', AppState.activeJot.activeJotEditorTemplate)
+    setHTML('editor-view', AppState.activeJot.activeJotEditorTemplate)
   }
 
 
@@ -85,7 +85,7 @@ export class JotsController {
 
   drawAllJots() {
     // REVIEW __________
-    // const editorBgToRemove = document.getElementById('active-jot-editor')
+    // const editorBgToRemove = document.getElementById('editor-view')
     // editorBgToRemove.remove()
 
 

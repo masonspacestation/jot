@@ -21,10 +21,10 @@ export class Jot {
 
   get activeJotEditorTemplate() {
     return `
-    <div id="editor-bg" class="d-flex text-center justify-content-center bg-dark">
-    <div class="col-8 card bg-light shadow rounded rounded-2 p-5">
+  <div id="editor-bg" class="d-flex text-center justify-content-center bg-dark">
+    <div id="active-jot-editor" class="col-8 card bg-light shadow rounded rounded-2 p-5">
 
-    <div id="body-editor" class="card w-75 m-5 p-3 text-start">
+    <div id="body-editor" class="w-75 m-5 p-3 text-start">
       <section class="row">
         <div class="card">
           <h3>${this.title}</h3>

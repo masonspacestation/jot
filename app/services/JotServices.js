@@ -39,7 +39,7 @@ class JotServices {
     console.log(AppState.activeJot);
     this.saveJot()
 
-    setHTML('active-jot-editor', '')
+    setHTML('editor-view', '')
     AppState.emit('jots')
   }
 
@@ -54,7 +54,7 @@ class JotServices {
     console.log("we've reached the service");
 
     // REVIEW __________
-    // const editorBgToRemove = document.getElementById('active-jot-editor')
+    // const editorBgToRemove = document.getElementById('editor-view')
     // editorBgToRemove.remove()
   }
 

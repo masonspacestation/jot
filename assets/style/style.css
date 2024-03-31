@@ -27,9 +27,13 @@ input [type=text] {
   height: auto;
 }
 
+#test-form {
+  height: 100dvh;
+}
+
 #active-jot-editor {
-  /* margin: 25% auto;
-  padding: 20px; */
+  margin: 25% auto;
+  padding: 20px;
   width: 60%;
   opacity: 80%;
 }
