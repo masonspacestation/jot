@@ -79,7 +79,7 @@ export class JotsController {
   // click on jot name - pass id to click event -  service sets active jot equal to this new one - active jot will draw through listener
 
   setActiveJot(jotID) {
-    console.log('setactive controller: ', jotID);
+    // console.log('setactive controller: ', jotID);
     jotServices.setActiveJot(jotID)
   }
 

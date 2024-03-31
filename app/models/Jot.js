@@ -21,34 +21,57 @@ export class Jot {
 
   get activeJotEditorTemplate() {
     return `
-  <div id="editor-bg" class="d-flex text-center justify-content-center bg-dark">
-    <div id="active-jot-editor" class="col-8 card bg-light shadow rounded rounded-2 p-5">
-
-    <div id="body-editor" class="w-75 m-5 p-3 text-start">
-      <section class="row">
-        <div class="card">
-          <h3>${this.title}</h3>
+    <section id="test-form" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
+    <div id="body-card" class="col-12 rounded rounded-2 w-50 h-50 m-5 m-auto p-5">
+      <div class="row justify-content-around">
+        <div class="col-11">
   
-          <div>
-            <label for="jotBody">Jot Body</label>
-            <textarea onblur="app.JotsController.setJotBody()" name="body" id="jotBody">${this.body}</textarea>
+          <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i> ${this.title}</h3>
+  
+          <label for="jotBody"></label>
+          <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"
+            id="jotBody">${this.body}</textarea>
+          <div class="row justify-content-between">
+            <span class="text-secondary w-50 text-start">Last Edited: ${this.LastViewedDateAndTime}</span>
+            <span class="text-secondary w-50 text-end">Created: ${this.CreatedDate}</span>
           </div>
-  
         </div>
-      </section>
+        <div class="col-1 py-5 text-end">
+  
+          <button type="button" onclick="app.JotsController.drawAllJots()" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
+            data-placement="right" title="Back to all Jots">
+            <i class="mdi mdi-notebook"></i>
+          </button>
+          <button type="button" onclick="app.JotsController.drawAllJots()" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
+            data-placement="right" title="Delete Jot aka Jot Not">
+            <i class="mdi mdi-trash-can"></i>
+          </button>
+        </div>
+      </div>
     </div>
-
-    </div>
-  </div>
-
-
-
-
-
-      `
+  </section>
+  `
   }
 
+  // <div id="editor-bg" class="d-flex text-center justify-content-center bg-dark">
+  //   <div id="active-jot-editor" class="col-8 card bg-light shadow rounded rounded-2 p-5">
 
+  //   <div id="body-editor" class="w-75 m-5 p-3 text-start">
+  //     <section class="row">
+  //       <div class="card">
+  //         <h3>${this.title}</h3>
+
+  //         <div>
+  //           <label for="jotBody">Jot Body</label>
+  //           <textarea onblur="app.JotsController.setJotBody()" name="body" id="jotBody">${this.body}</textarea>
+  //         </div>
+
+  //       </div>
+  //     </section>
+  //   </div>
+
+  //   </div>
+  // </div>
 
 
 
@@ -62,9 +85,7 @@ export class Jot {
 
   get jotListTemplate() {
     return `
-    <button onclick="app.JotsController.setActiveJot('${this.id}')" class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> ${this.title}</button>
-
-    
+    <button onclick="app.JotsController.setActiveJot('${this.id}')" class="btn btn-outline-secondary w-auto text-secondary"><i class="mdi mdi-circle-double text-warning"></i> ${this.title}</button>
     `
   }
 
