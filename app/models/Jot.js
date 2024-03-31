@@ -19,6 +19,8 @@ export class Jot {
   }
 
 
+
+
   get activeJotEditorTemplate() {
     return `
     <section id="test-form" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
@@ -26,7 +28,7 @@ export class Jot {
       <div class="row justify-content-around">
         <div class="col-11">
   
-          <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i> ${this.title}</h3>
+          <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i>${jots.length} ${this.title}</h3>
   
           <label for="jotBody"></label>
           <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"

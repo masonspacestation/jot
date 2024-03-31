@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { jotServices } from "../services/JotServices.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 
@@ -60,8 +61,10 @@ export class JotsController {
   drawActiveJot() {
     // const activeJot = AppState.activeJot
     AppState.emit('jots')
-
+    document.getElementById('home-content').classList.add('d-none')
     setHTML('editor-view', AppState.activeJot.activeJotEditorTemplate)
+
+
   }
 
 
@@ -100,15 +103,28 @@ export class JotsController {
     let jotsContent = ''
     allJots.forEach(jot => jotsContent += jot.jotListTemplate)
     setHTML('jot-list', jotsContent)
-
+    document.getElementById('home-content').classList.remove('d-none')
   }
 
-  trashJot(jotId) {
+  trashJot() {
+    const wantsToDestroy = window.confirm("Are you sure you want to delete this?")
 
-    jotServices.trashJot(jotId)
+    if (wantsToDestroy == false) {
+      return
+    }
+    console.log('🙅 destroying this report ');
+
+    jotServices.trashJot()
+    this.drawAllJots()
   }
-
-
 
 
 }
+
+
+
+// let jotCounter = document.getElementById('jot-count')
+// jotCounter.innerHTML = `
+// <small class="text-secondary fw-lighter w-75 d-block">${AppState.jots.length}</small>
+// <hr class="text-light w-75">
+// `

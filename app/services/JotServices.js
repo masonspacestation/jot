@@ -1,16 +1,23 @@
 import { AppState } from "../AppState.js";
+import { JotsController } from "../controllers/JotsController.js";
 import { Jot } from "../models/Jot.js";
 import { loadState, saveState } from "../utils/Store.js";
 import { setHTML } from "../utils/Writer.js";
 
 class JotServices {
-  trashJot(jotId) {
-    let jotToTrash = AppState.jots.findIndex(jot => jot.id == jotId)
+  trashJot() {
+    const jotToDestroy = AppState.activeJot.id
+    console.log('jot id', jotToDestroy);
 
-    console.log('trashing from service ', jotToTrash);
-    AppState.jots.splice(jotToTrash, 1)
+    const indexOfJotToDestroy = AppState.jots.findIndex(jot => jot.id == jotToDestroy)
 
-    console.log('this should have one removed', AppState);
+    if (indexOfJotToDestroy == -1) {
+      console.log('Error finding Index');
+      return
+    }
+
+    AppState.jots.splice(indexOfJotToDestroy, 1)
+    this.saveJot()
   }
 
   setNewJot(newJotTitle) {
