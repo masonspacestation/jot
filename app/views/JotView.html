@@ -1,190 +1,25 @@
-<!-- <section class="container-fluid">
-  <div class="row justify-content-start bg-white"> -->
-<!-- <div class="col-3 bg-light text-start">
-      <ul class="ms-0">
-        <li id="jot-list"><button class="btn w-50">Jot Title 1</button></li>
-      </ul>
-      <form onsubmit="app.JotsController.createNewJot()">
-        <label for="title">New Jot</label>
-        <input type="text" name="title" id="title" minlength="3" maxlength="15" class="form-floating" required>
-        <label for="color">Set a Color</label>
-        <input type="color" list="presetColors">
-        <datalist id="presetColors">
-          <option value="#ff0000">#ff0000</option>
-          <option value="#00ff00">#00ff00</option>
-          <option value="#0000ff">#0000ff</option>
-        </datalist>
-        <button type="submit">Add New</button>
-      </form>
-    </div> -->
+<div id="editor-view">
 
-
-<!-- STUB going away for now -->
-<!-- <section class="container-fluid bg-dark p-5 justify-content-center align-content-center">
-
-      <form onsubmit="app.JotsController.createNewJot()">
-        <label for="title">New Jot</label>
-        <input type="text" name="title" id="title" minlength="3" maxlength="15"
-          class=" bg-transparent py-3 px-5 fs-6 rounded" placeholder="Jot Something Down" required>
-        <label for="color">Set a Color</label>
-        <input type="color" list="presetColors">
-        <datalist id="presetColors">
-          <option value="#ff0000">#ff0000</option>
-          <option value="#00ff00">#00ff00</option>
-          <option value="#0000ff">#0000ff</option>
-        </datalist>
-        <button type="submit">Add New</button>
-      </form>
-    </section> -->
-
-
-
-<!-- <div id="editor-view" class="col d-flex justify-content-center align-items-center bg-dark"> -->
-<!-- <div id="body-editor" class="card w-75 m-5 p-3 text-start">
-        <section class="row"> -->
-<!-- <h3>Jot Title</h3>
-
-          <h1>Practice Editor</h1>
-          <form id="test-jot-editor" onsubmit="app.JotsController.setJotBody()">
-
-            <input type="text-area" name="" id="">
-            <textarea name="jotBody" id="jotBody" rows="10" class="w-75 rounded-2"></textarea>
-            <button type="submit">Submit</button>
-          </form> -->
-
-<!-- </section>
-      </div> -->
-
-<!-- </div> -->
-
-<!-- </div> -->
-
-
-
-
-
-<!-- </section> -->
-<!-- <section id="test-form" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
-  <div id="body-card" class="col-12 rounded rounded-2 w-50 h-50 m-5 m-auto p-5">
-    <div class="row justify-content-around">
-      <div class="col-11">
-
-        <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i> Jot Title</h3>
-
-        <label for="jotBody"></label>
-        <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"
-          id="jotBody">${this.body}</textarea>
-        <div class="row justify-content-between">
-          <span class="text-secondary w-50 text-start">Last Edited: 30 May, 2021</span>
-          <span class="text-secondary w-50 text-end">Created: 28 July, 2012</span>
-        </div>
-      </div>
-      <div class="col-1 py-5 text-end">
-
-        <button type="button" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
-          data-placement="right" title="Tooltip on right">
-          <i class="mdi mdi-notebook"></i>
-        </button>
-        <button type="button" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
-          data-placement="right" title="Tooltip on right">
-          <i class="mdi mdi-trash-can"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- <section id="test-form" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
-  <div class="col-12 card rounded rounded-2 w-50 h-50 m-5 m-auto p-5">
-    <div class="row justify-content-around">
-      <div class="col-11">
-
-        <h3><i class="fs-6 text-end mdi mdi-circle-double"></i> Jot Title</h3>
-
-        <label for="jotBody"></label>
-        <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"
-          id="jotBody">${this.body}</textarea>
-        <div class="row justify-content-between">
-          <span class="w-50 text-start">Last Edited: 30 May, 2021</span>
-          <span class="w-50 text-end">Created: 28 July, 2012</span>
-        </div>
-      </div>
-      <div class="col-1 py-5 text-end">
-
-        <button type="button" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
-          data-placement="right" title="Tooltip on right">
-          <i class="mdi mdi-notebook"></i>
-        </button>
-        <button type="button" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
-          data-placement="right" title="Tooltip on right">
-          <i class="mdi mdi-trash-can"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section> -->
+</div>
 
 <section id="home-content" class="container-fluid bg-dark">
-  <div id="editor-view">
-
-  </div>
   <section class="row justify-content-center align-items-end h-50">
     <div class="col-8">
-      <div id="jot-list" class="row over justify-content-center p-5 gap-4">
-        <!-- <button class="btn btn-outline-light w-auto text-light"><i class="mdi mdi-circle-double text-warning"></i> Title
-          one two</button> -->
+      <div id="jot-list" class="row justify-content-center p-5 gap-4">
+
       </div>
     </div>
   </section>
-  <section class="row justify-content-center h-50 align-items-start">
-    <button onclick="app.JotsController.createNewJot()" class="btn btn-outline-secondary w-25 p-3 m-2 text-secondary"><i
-        class="mdi mdi-pencil-circle"></i>
-      Write
-      New Note</button>
+  <section class="row justify-content-center text-center h-50 align-items-start">
+
+    <form id="newJotTitleForm" onsubmit="app.JotsController.createNewJot()">
+
+      <input type="text" placeholder="
+  Jot Something Down" name="title" id="title" class="form-control outline-secondary w-25 p-3 m-2 text-secondary fs-6"
+        minlength="3" maxlength="15">
+    </form>
+
   </section>
+
+
 </section>
-
-
-
-<!-- 
-<div class="container-fluid">
-  <div class="row bg-dark py-3">
-    <p class="fs-3 align-items-center">
-  
-    </p>
-  </div>
-
-  <div class="row bg-primary p-5">
-    <button class="btn btn-info w-25" onclick="app.JotsController.drawTitleForm()">Create
-      New</button>
-  </div> -->
-
-<!-- button to open title editor -->
-
-<!-- <section id="new-jot-title-form" class="row">
-    <div class="col-8 mt-3 p-3">
-      <form onsubmit="app.JotsController.createNewJotTitle()">
-        <label for="title">Title of New Jot</label>
-        <input type="text" name="title" id="title" class="form-control">
-        <button class="btn" type="submit">Submit</button>
-      </form>
-    </div>
-  </section> -->
-
-
-<!-- <section id="editor-view" class="row">
-  </section> -->
-
-<!-- <section class="row" id="test-jot-editor">
-
-    <div class="col-6 card">
-      <h1>Practice Editor</h1>
-      <form id="test-jot-editor" onsubmit="app.JotsController.setJotBody()">
-        <input type="text-area" name="jotBody" id="jotBody" class="w-75"></input>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus assumenda veniam blanditiis?</p>
-</div>
-</section> -->
-
-</div>

@@ -5,7 +5,12 @@ import { setHTML } from "../utils/Writer.js";
 
 class JotServices {
   trashJot(jotId) {
-    console.log(jotId);
+    let jotToTrash = AppState.jots.findIndex(jot => jot.id == jotId)
+
+    console.log('trashing from service ', jotToTrash);
+    AppState.jots.splice(jotToTrash, 1)
+
+    console.log('this should have one removed', AppState);
   }
 
   setNewJot(newJotTitle) {
@@ -22,7 +27,7 @@ class JotServices {
 
 
   setActiveJot(jotId) {
-    // console.log('newjot sent to set active in service: ', jotId);
+    console.log('newjot sent to set active in service: ', jotId);
     const activeJot = AppState.jots.find(jot => jot.id == jotId)
     AppState.activeJot = activeJot
     //@ts-ignore

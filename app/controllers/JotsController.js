@@ -19,6 +19,10 @@ export class JotsController {
   }
 
 
+  createNewJotTitle() {
+
+  }
+
 
   createNewJot() {
     try {
@@ -35,6 +39,21 @@ export class JotsController {
       window.alert(error.message)
     }
   }
+  // createNewJot() {
+  //   try {
+  //     event.preventDefault()
+  //     const form = event.target
+  //     const newJot = getFormData(form)
+
+  //     jotServices.setNewJot(newJot)
+  //     // @ts-ignore
+  //     form.reset()
+  //   }
+  //   catch (error) {
+  //     console.error('[CREATING NEW JOT] ', error);
+  //     window.alert(error.message)
+  //   }
+  // }
 
 
 
@@ -42,10 +61,6 @@ export class JotsController {
     // const activeJot = AppState.activeJot
     AppState.emit('jots')
 
-
-
-    // const editorBgToAdd = document.getElementById('editor-view')
-    // editorBgToAdd.add()
     setHTML('editor-view', AppState.activeJot.activeJotEditorTemplate)
   }
 
@@ -75,20 +90,12 @@ export class JotsController {
   }
 
 
-
-  // click on jot name - pass id to click event -  service sets active jot equal to this new one - active jot will draw through listener
-
   setActiveJot(jotID) {
-    // console.log('setactive controller: ', jotID);
+    console.log('setactive controller: ', jotID);
     jotServices.setActiveJot(jotID)
   }
 
   drawAllJots() {
-    // REVIEW __________
-    // const editorBgToRemove = document.getElementById('editor-view')
-    // editorBgToRemove.remove()
-
-
     const allJots = AppState.jots
     let jotsContent = ''
     allJots.forEach(jot => jotsContent += jot.jotListTemplate)
@@ -97,7 +104,7 @@ export class JotsController {
   }
 
   trashJot(jotId) {
-    let jotToTrash = AppState.jots.find(jot => jot.id == jotId)
+
     jotServices.trashJot(jotId)
   }
 
