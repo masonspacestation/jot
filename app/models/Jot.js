@@ -42,7 +42,7 @@ export class Jot {
             data-placement="right" title="Back to all Jots">
             <i class="mdi mdi-notebook"></i>
           </button>
-          <button type="button" onclick="app.JotsController.drawAllJots()" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
+          <button type="button" onclick="app.JotsController.trashJot('${this.id}')" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
             data-placement="right" title="Delete Jot aka Jot Not">
             <i class="mdi mdi-trash-can"></i>
           </button>

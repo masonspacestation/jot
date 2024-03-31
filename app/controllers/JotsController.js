@@ -96,7 +96,10 @@ export class JotsController {
 
   }
 
-
+  trashJot(jotId) {
+    let jotToTrash = AppState.jots.find(jot => jot.id == jotId)
+    jotServices.trashJot(jotId)
+  }
 
 
 

@@ -4,6 +4,9 @@ import { loadState, saveState } from "../utils/Store.js";
 import { setHTML } from "../utils/Writer.js";
 
 class JotServices {
+  trashJot(jotId) {
+    console.log(jotId);
+  }
 
   setNewJot(newJotTitle) {
     // console.log(newJotTitle, 'passed to service');
