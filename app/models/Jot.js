@@ -28,7 +28,7 @@ export class Jot {
       <div class="row justify-content-around">
         <div class="col-11">
   
-          <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i>${jots.length} ${this.title}</h3>
+          <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i> ${this.title}</h3>
   
           <label for="jotBody"></label>
           <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"
@@ -38,8 +38,9 @@ export class Jot {
             <span class="text-secondary w-50 text-end">Created: ${this.CreatedDate}</span>
           </div>
         </div>
+
+        
         <div class="col-1 py-5 text-end">
-  
           <button type="button" onclick="app.JotsController.drawAllJots()" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
             data-placement="right" title="Back to all Jots">
             <i class="mdi mdi-notebook"></i>
@@ -55,12 +56,41 @@ export class Jot {
   `
   }
 
+  //   `
+  //   <section id="test-form" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
+  //   <div id="body-card" class="col-12 rounded rounded-2 w-50 h-50 m-5 m-auto p-5">
+  //     <div class="row justify-content-around">
+  //       <div class="col-11">
 
+  //         <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i>${jots.length} ${this.title}</h3>
+
+  //         <label for="jotBody"></label>
+  //         <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"
+  //           id="jotBody">${this.body}</textarea>
+  //         <div class="row justify-content-between">
+  //           <span class="text-secondary w-50 text-start">Last Edited: ${this.LastViewedDateAndTime}</span>
+  //           <span class="text-secondary w-50 text-end">Created: ${this.CreatedDate}</span>
+  //         </div>
+  //       </div>
+  //       <div class="col-1 py-5 text-end">
+
+  //         <button type="button" onclick="app.JotsController.drawAllJots()" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
+  //           data-placement="right" title="Back to all Jots">
+  //           <i class="mdi mdi-notebook"></i>
+  //         </button>
+  //         <button type="button" onclick="app.JotsController.trashJot('${this.id}')" class="btn btn-outline-secondary rounded-circle fs-4 my-5" data-toggle="tooltip"
+  //           data-placement="right" title="Delete Jot aka Jot Not">
+  //           <i class="mdi mdi-trash-can"></i>
+  //         </button>
+  //       </div>
+  //     </div>
+  //   </div>
+  // </section>
+  // `
 
   get newJotTitleForm() {
     return `
-    <h3>${this.title}</h3>
-
+  
   `
   }
 

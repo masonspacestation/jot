@@ -17,6 +17,7 @@ export class JotsController {
 
     jotServices.loadJots()
     this.drawAllJots()
+
   }
 
 
@@ -71,7 +72,7 @@ export class JotsController {
   setJotBody() {
     event.preventDefault()
     const form = event.target
-
+    console.log('you are here', form);
     // @ts-ignore
     const newJotBody = form.value
     jotServices.setJotBody(newJotBody)
@@ -104,6 +105,15 @@ export class JotsController {
     allJots.forEach(jot => jotsContent += jot.jotListTemplate)
     setHTML('jot-list', jotsContent)
     document.getElementById('home-content').classList.remove('d-none')
+
+
+    if (AppState.jots.length > 0) {
+      let jotCounter = document.getElementById('jot-count')
+      jotCounter.innerHTML = `
+      <small class="text-secondary fw-lighter w-75 d-block">Showing ${AppState.jots.length} Jots</small>
+      <hr class="text-light w-75">
+    `
+    }
   }
 
   trashJot() {
@@ -123,8 +133,3 @@ export class JotsController {
 
 
 
-// let jotCounter = document.getElementById('jot-count')
-// jotCounter.innerHTML = `
-// <small class="text-secondary fw-lighter w-75 d-block">${AppState.jots.length}</small>
-// <hr class="text-light w-75">
-// `

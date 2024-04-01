@@ -1,17 +1,18 @@
 /* BASIC STYLES HERE */
+:root {
+  --primary: #3700b3;
+  --secondary: #03dac6;
+  --variant: #bb86fe;
+
+}
+
+body {
+  background-color: #111927;
+  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+}
+
 label {
   display: block;
-}
-
-ul {
-  list-style-type: none;
-}
-
-input [type=text] {
-  border: red;
-  border-radius: 5px;
-  background: none;
-
 }
 
 ::placeholder {
@@ -27,17 +28,24 @@ input [type=text] {
   height: auto;
 }
 
-#test-form {
-  height: 100dvh;
-}
-
-#newJotTitleForm>input {
+#newJotTitleFormInput {
   background-color: transparent;
   color: #aeb0c5;
   text-align: center;
-
+  border: 0;
 }
 
+#jotColor {
+  appearance: none;
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  border: 1px #aeb0c5 solid;
+
+  border-radius: 10%;
+  padding: 0;
+}
 
 #active-jot-editor {
   margin: 25% auto;
