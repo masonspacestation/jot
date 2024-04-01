@@ -34,11 +34,10 @@ class JotServices {
 
 
   setActiveJot(jotId) {
-    console.log('newjot sent to set active in service: ', jotId);
     const activeJot = AppState.jots.find(jot => jot.id == jotId)
     AppState.activeJot = activeJot
     //@ts-ignore
-    activeJot.timeEdited = Date()
+    activeJot.timeEdited = new Date()
     console.log('🎯 ', AppState.activeJot);
 
 
@@ -51,7 +50,6 @@ class JotServices {
 
     AppState.activeJot.body = newJotBody
 
-    console.log(AppState.activeJot);
     this.saveJot()
 
     setHTML('editor-view', '')

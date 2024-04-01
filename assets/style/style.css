@@ -6,11 +6,6 @@
 
 }
 
-body {
-  background-color: #111927;
-  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
-}
-
 label {
   display: block;
 }
@@ -35,7 +30,11 @@ label {
   border: 0;
 }
 
-#jotColor {
+#editor {
+  height: 100dvh;
+}
+
+/* #jotColor {
   appearance: none;
   background-color: transparent;
   height: 24px;
@@ -45,7 +44,7 @@ label {
 
   border-radius: 10%;
   padding: 0;
-}
+} */
 
 #active-jot-editor {
   margin: 25% auto;

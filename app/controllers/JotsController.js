@@ -11,7 +11,7 @@ import { setHTML } from "../utils/Writer.js";
 export class JotsController {
   constructor(data) {
 
-    console.log('✒️ the jots controller is loaded');
+    console.log('gettin jotty with it');
     AppState.on('activeJot', this.drawActiveJot)
     AppState.on('jots', this.drawAllJots)
 
@@ -30,6 +30,7 @@ export class JotsController {
     try {
       event.preventDefault()
       const form = event.target
+      // debugger
       const newJot = getFormData(form)
 
       jotServices.setNewJot(newJot)
@@ -72,7 +73,7 @@ export class JotsController {
   setJotBody() {
     event.preventDefault()
     const form = event.target
-    console.log('you are here', form);
+
     // @ts-ignore
     const newJotBody = form.value
     jotServices.setJotBody(newJotBody)
@@ -107,7 +108,13 @@ export class JotsController {
     document.getElementById('home-content').classList.remove('d-none')
 
 
-    if (AppState.jots.length > 0) {
+    if (AppState.jots.length == 1) {
+      let jotCounter = document.getElementById('jot-count')
+      jotCounter.innerHTML = `
+      <small class="text-secondary fw-lighter w-75 d-block">Showing ${AppState.jots.length} Jot</small>
+      <hr class="text-light w-75">
+    `
+    } else if (AppState.jots.length > 1) {
       let jotCounter = document.getElementById('jot-count')
       jotCounter.innerHTML = `
       <small class="text-secondary fw-lighter w-75 d-block">Showing ${AppState.jots.length} Jots</small>

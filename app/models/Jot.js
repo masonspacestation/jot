@@ -23,12 +23,12 @@ export class Jot {
 
   get activeJotEditorTemplate() {
     return `
-    <section id="test-form" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
+    <section id="editor" class="container-fluid bg-dark d-flex justify-content-center align-content-center">
     <div id="body-card" class="col-12 rounded rounded-2 w-50 h-50 m-5 m-auto p-5">
       <div class="row justify-content-around">
         <div class="col-11">
   
-          <h3 class="text-secondary"><i class="fs-6 text-end mdi mdi-circle-double"></i> ${this.title}</h3>
+          <h3 class="text-secondary"><i style="color:${this.jotColor}" class="fs-6 text-end mdi mdi-circle-double"></i> ${this.title}</h3>
   
           <label for="jotBody"></label>
           <textarea onblur="app.JotsController.setJotBody()" name="body" class="h-75 w-100"
@@ -97,7 +97,7 @@ export class Jot {
 
   get jotListTemplate() {
     return `
-    <button onclick="app.JotsController.setActiveJot('${this.id}')" class="btn btn-outline-secondary w-auto text-secondary"><i class="mdi mdi-circle-double text-warning"></i> ${this.title}</button>
+    <button onclick="app.JotsController.setActiveJot('${this.id}')" class="btn btn-outline-secondary w-auto text-secondary"><i style="color:${this.jotColor}" class="mdi mdi-circle-double"></i> ${this.title}</button>
     `
   }
 
