@@ -65,10 +65,6 @@ class JotServices {
     const jotsFromLocalStorage = loadState('jots', [Jot])
     AppState.jots = jotsFromLocalStorage
     console.log("we've reached the service");
-
-    // REVIEW __________
-    // const editorBgToRemove = document.getElementById('editor-view')
-    // editorBgToRemove.remove()
   }
 
 
