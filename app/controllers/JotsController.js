@@ -105,6 +105,7 @@ export class JotsController {
     let jotsContent = ''
     allJots.forEach(jot => jotsContent += jot.jotListTemplate)
     setHTML('jot-list', jotsContent)
+    document.getElementById('editor-view').classList.add('d-none')
     document.getElementById('home-content').classList.remove('d-none')
 
 
