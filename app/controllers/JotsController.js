@@ -76,6 +76,7 @@ export class JotsController {
     // @ts-ignore
     const newJotBody = form.value
     jotServices.setJotBody(newJotBody)
+    this.drawAllJots()
 
     // REVIEW why is this wrong?
     // const newJotBody = event.target
