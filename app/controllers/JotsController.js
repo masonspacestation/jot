@@ -64,9 +64,8 @@ export class JotsController {
     // const activeJot = AppState.activeJot
     AppState.emit('jots')
     document.getElementById('home-content').classList.add('d-none')
+    document.getElementById('editor-view').classList.remove('d-none')
     setHTML('editor-view', AppState.activeJot.activeJotEditorTemplate)
-
-
   }
 
 
